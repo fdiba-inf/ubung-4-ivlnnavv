@@ -1,29 +1,29 @@
+  
 package exercise4;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class MinIndex {
+public class MinIndex{
+  public static void main(String[] args){
+    Scanner input = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int length =input.nextInt();
+    int index = 0;
+    float minValue = Float.MAX_VALUE;
+    int n = input.nextInt();
+    float[] array = new float[n];
 
-        double[] number = new double[length];
-        int index = 0;
-        double min=0.0;  
-        for ( index= 0 ; index < number.length; index++) {
-            number[index] = input.nextDouble();
-            if (min==number [index]) {
-            min=index;
-            break;
-            }
-        }
-        
-
-
-       System.out.println("Min index: " + index );
-       
+    for(int i = 0; i < array.length; i++){
+      array[i] = input.nextFloat();
     }
 
+    for(int i = 0; i < array.length; i++){
+
+      if(array[i] < minValue){
+        minValue = array[i];
+        index = i;
+      }
+    }
+
+    System.out.println("Min index: " + index);
+  }
 }
